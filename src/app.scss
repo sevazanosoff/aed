@@ -1,0 +1,32 @@
+@import './assets/scss/variables.scss';
+.app {
+    min-width: 100%;
+}
+.main__layout-wrapper {
+}
+.about__layout-wrapper {
+    margin-top: 160px;
+}
+.services__layout-wrapper {
+    margin-top: 200px;
+    padding-bottom: 12.5%;
+}
+
+.projects__layout-wrapper {
+    background: $background;
+    padding-top: 230px;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+.reviews__layout-wrapper {
+    margin-top: 160px;
+}
+
+.contact__layout-wrapper {
+    margin-top: 200px;
+}
+
+.footer__layout-wrapper {
+    padding-top: 160px;
+}

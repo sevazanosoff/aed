@@ -1,0 +1,55 @@
+@import '../../assets/scss/variables.scss';
+
+.project__item {
+    background: $background;
+    z-index: 1;
+    display: flex;
+    gap: 24px;
+    @media (max-width: 1440px) {
+        flex-direction: column;
+    }
+    &-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+        @media (max-width: 1440px) {
+            flex-direction: column-reverse;
+        }
+    }
+    &-image {
+        @media (max-width: 1440px) {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+    &-content {
+        &-title {
+            color: $whiteColor;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+        }
+        &-status {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            padding: 10px 0;
+        }
+        &-text {
+            color: $whiteColor;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            margin-bottom: 30px;
+        }
+    }
+    .success {
+        color: $successColor;
+    }
+    .notsuccess {
+        color: $warningColor;
+    }
+}

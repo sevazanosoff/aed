@@ -1,0 +1,84 @@
+@import '../../../assets/scss/variables.scss';
+.button {
+    position: relative;
+    color: $whiteColor;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 420px;
+    height: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    background: linear-gradient(to bottom, $whiteColor 1px, transparent 1px) 0 0 / 100% 1px no-repeat;
+    transition: background-size 0.3s ease;
+    @media (max-width: 560px) {
+        width: 270px;
+    }
+    &__text {
+        z-index: 5;
+        display: flex;
+        gap: 10px;
+    }
+    &__success {
+        position: relative;
+        color: $background;
+        border-top: 1px solid $greenColor;
+        background: rgba(170, 220, 172, 0.2) !important;
+        overflow: hidden;
+        z-index: 2;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(170, 220, 172, 0.4);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        &:hover::before {
+            transform: scaleY(1);
+        }
+    }
+    &:not(:hover) {
+        animation: fadeOutBackground 0.3s ease forwards;
+    }
+
+    &:hover {
+        background-size: 100% 100%;
+        animation: fadeInBackground 0.3s ease forwards;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        height: 100%;
+        z-index: 5;
+    }
+}
+
+@keyframes fadeInBackground {
+    0% {
+        background: linear-gradient(to bottom, $whiteColor 1px, transparent 1px) 0 0 / 100% 1px no-repeat;
+    }
+    100% {
+        background: linear-gradient(to bottom, $whiteColor 1px, rgba($gray60Color, 0.2) 1px) 0 0 / 100% 100% no-repeat;
+    }
+}
+
+@keyframes fadeOutBackground {
+    0% {
+        background: linear-gradient(to bottom, $whiteColor 1px, rgba($gray60Color, 0.2) 1px) 0 0 / 100% 100% no-repeat;
+    }
+    100% {
+        background: linear-gradient(to bottom, $whiteColor 1px, transparent 1px) 0 0 / 100% 1px no-repeat;
+    }
+}

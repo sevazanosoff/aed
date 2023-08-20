@@ -1,0 +1,74 @@
+@import '../../assets/scss/variables.scss';
+
+.contacts {
+    &__wrapper {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gray-40, #e6e7e8);
+        }
+    }
+    &__title {
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.48px;
+        @media (max-width: 560px) {
+            font-size: 36px;
+        }
+    }
+    &__blocks {
+        display: flex;
+        gap: 250px;
+        @media (max-width: 1440px) {
+            flex-direction: column;
+            gap: 50px;
+        }
+    }
+    &__info {
+        flex: 0 1 310px;
+        &-item {
+            &-title {
+                color: $grayDisabledColor;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            &-text {
+                color: $background;
+                font-size: 27px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @media (max-width: 560px) {
+                    font-size: 22px;
+                }
+            }
+        }
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            &-block {
+                display: flex;
+                gap: 40px;
+                @media (max-width: 1440px) {
+                    flex-direction: column;
+                }
+            }
+            &-button {
+                padding-top: 40px;
+            }
+            &-item {
+            }
+        }
+    }
+}

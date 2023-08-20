@@ -1,0 +1,102 @@
+@import '../../assets/scss/variables.scss';
+
+.reviews {
+    &__wrapper {
+    }
+    &__title {
+        color: $background;
+        text-align: center;
+        text-align: center;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.48px;
+    }
+    &__block {
+        display: flex;
+        gap: 25px;
+        @media (max-width: 1440px) {
+            flex-direction: column;
+        }
+        &-image {
+            @media (max-width: 1440px) {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        &-content {
+            position: relative;
+            &-title {
+                color: $background;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+            &-subtitle {
+                color: $grayDisabledColor;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+                padding-left: 25px;
+                margin-top: 25px;
+                margin-bottom: 50px;
+                position: relative;
+                @media (max-width: 1440px) {
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 16px;
+                    height: 1px;
+                    background-color: $grayDisabledColor;
+                }
+            }
+        }
+    }
+    &__more {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        @media (max-width: 1440px) {
+            bottom: -100px;
+        }
+        &-arrows {
+            display: flex;
+            gap: 24px;
+        }
+        &-arrow {
+            cursor: pointer;
+            opacity: 1;
+            transition: 0.3s ease;
+            &:hover {
+                opacity: 0.8;
+                transition: 0.3s ease;
+            }
+        }
+
+        &-text {
+            margin-top: 5px;
+            font-size: 16px;
+            color: $grayDisabledColor;
+            cursor: pointer;
+            opacity: 1;
+            transition: 0.3s ease;
+            &:hover {
+                opacity: 0.8;
+                transition: 0.3s ease;
+            }
+        }
+    }
+}

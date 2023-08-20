@@ -1,0 +1,136 @@
+@import '../../assets/scss/variables.scss';
+
+.header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    &__wrapper {
+        margin: 0 auto;
+        display: flex;
+        gap: 140px;
+        @media (max-width: 1440px) {
+            flex-direction: column;
+            gap: 0px;
+        }
+        @media (max-width: 960px) {
+            height: 200px;
+            gap: 30px;
+        }
+    }
+    &__logo {
+        display: flex;
+        margin-top: 15px;
+        @media (max-width: 960px) {
+            margin-top: 80px;
+        }
+        @media (max-width: 560px) {
+            justify-content: center;
+        }
+    }
+    &__block {
+        display: flex;
+        gap: 50px;
+        @media (max-width: 960px) {
+            gap: 0;
+            flex-direction: column;
+        }
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        white-space: nowrap;
+        @media (max-width: 960px) {
+            gap: 20px;
+            font-size: 0.6rem;
+        }
+        @media (max-width: 560px) {
+            font-size: 1rem;
+            gap: 10px;
+            flex-direction: column;
+        }
+        &-link {
+            text-decoration: none;
+            color: $whiteColor;
+            transition: 0.2s ease;
+            padding: 0 5px;
+            &:hover {
+                opacity: 0.7;
+                transition: 0.2s ease;
+            }
+        }
+    }
+    &__language {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        gap: 5px;
+        color: $whiteColor;
+        cursor: pointer;
+        transition: 0.2s ease;
+        &:hover {
+            opacity: 0.7;
+            transition: 0.2s ease;
+        }
+        &-arrow {
+            transition: transform 0.3s ease;
+        }
+        &:hover &-arrow {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__join {
+        width: 200px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        color: $whiteColor;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        padding: 8px 10px;
+        justify-content: center;
+        flex-shrink: 0;
+        @media (max-width: 960px) {
+            margin: 0 auto;
+        }
+        &-text {
+            position: relative;
+            z-index: 2;
+        }
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        &::before {
+            border: 1px solid transparent;
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+            top: 0px;
+            left: 0px;
+            background: rgba($grayColor, 0.2);
+            backdrop-filter: blur(7.5px);
+            opacity: 0;
+        }
+        &::after {
+            width: 100%;
+            height: 1px;
+            background-color: $whiteColor;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &:hover::before {
+            border: 1px solid $whiteColor;
+            opacity: 1;
+        }
+        &:hover::after {
+            width: 0;
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@import '../../assets/scss/variables.scss';
+
+.projects {
+    position: relative;
+    background: $background;
+    &__wrapper {
+        padding-top: 230px;
+        @media (max-width: 960px) {
+            padding-top: 70px;
+        }
+        @media (max-width: 590px) {
+            padding-top: 0px;
+        }
+    }
+    &__title {
+        color: $whiteColor;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.48px;
+        text-align: center;
+    }
+    &__blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+        @media (max-width: 1440px) {
+            width: 100%;
+        }
+    }
+}

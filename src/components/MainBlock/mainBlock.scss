@@ -1,0 +1,48 @@
+@import '../../assets/scss/variables.scss';
+
+.main__screen {
+    background: url('../../assets/images/main__background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main__block {
+    margin-top: 245px;
+    max-width: 645px;
+    &-title {
+        color: $whiteColor;
+        font-size: 96px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 92%;
+        letter-spacing: -2.88px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-bottom: 50px;
+        @media (max-width: 960px) {
+            font-size: 72px;
+        }
+        @media (max-width: 590px) {
+            font-size: 42px;
+        }
+    }
+    &-text {
+        color: $whiteColor;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+    &-button {
+        display: block;
+        margin-top: 50px;
+        &:nth-of-type(2) {
+            margin-top: 5px;
+            margin-bottom: 100px;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import '../../../assets/scss/variables.scss';
+
+.input {
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &__text {
+        color: $background;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-left: 18px;
+    }
+    &__error {
+        color: $errorColor;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    &__wrapper {
+        position: relative;
+        width: 360px;
+        @media (max-width: 560px) {
+            width: 250px;
+        }
+        &.input__wrapper-error::after {
+            background-color: $errorColor;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--gray-60, #b6b6b6);
+            opacity: 1;
+            transition: background-color 0.3s ease;
+        }
+
+        &:focus-within::after {
+            background-color: black;
+        }
+    }
+    &__input {
+        border: none;
+        outline: none;
+        color: $background;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-left: 18px;
+        width: 100%;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &::placeholder {
+            color: var(--gray-60, #b6b6b6);
+        }
+
+        &:focus {
+            caret-color: transparent;
+        }
+    }
+    &--full-width .input__wrapper {
+        width: 100%;
+    }
+}
